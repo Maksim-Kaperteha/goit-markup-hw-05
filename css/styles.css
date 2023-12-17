@@ -242,14 +242,19 @@ a {
   height: 100%;
   top: 0;
   left: 0;
-  transition: var(--animation-time--);
+  transition: opacity var(--animation-time--);
   z-index: 100;
+  opacity: 1;
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+}
+
+.backdrop.is-hidden .modal-wraper {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .modal-wraper {
@@ -261,25 +266,10 @@ a {
   left: 50%;
   width: 528px;
   height: 581px;
-  transform: translate(-50%, -50%);
-
-
+  transform: translate(-50%, -50%) scale(1);
+  transition: var(--animation-time--);
 }
 
-@keyframes scale-up-center {
-  0% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1) translate(-50%, -50%);
-  }
-}
-
-.backdrop .modal-wraper {
-  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-
-}
 
 .modal-btn {
   position: absolute;
