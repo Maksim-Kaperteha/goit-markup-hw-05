@@ -109,7 +109,7 @@ a {
   letter-spacing: 0.28px;
   padding-top: 32px;
   padding-bottom: 32px;
-  transition: var(--animation-time--);
+  transition: color var(--animation-time--);
 }
 
 .link-navigation:hover,
@@ -168,7 +168,7 @@ a {
   letter-spacing: 0.28px;
   padding-top: 32px;
   padding-bottom: 32px;
-  transition: var(--animation-time--);
+  transition: color var(--animation-time--);
 }
 
 .link-contacts:hover,
@@ -223,19 +223,26 @@ a {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  transition: var(--animation-time--);
+  transition: color var(--animation-time--), bacground var(--animation-time--);
+
 }
 
-.header .btn {}
+.btn:hover,
+.btn:focus {
+  color: var(--white-cl--);
+  background: #188CE8;
+
+}
 
 /* Modal form */
 .backdrop {
-
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  transition: var(--animation-time--);
 }
 
 .backdrop.is-hidden {
@@ -255,7 +262,23 @@ a {
   width: 528px;
   height: 581px;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 10000;
+
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+.backdrop .maodal-wraper {
+  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
 }
 
 .modal-btn {
@@ -278,12 +301,6 @@ a {
   fill: var(--black-cl--);
 }
 
-.btn:hover,
-.btn:focus {
-  color: var(--white-cl--);
-  background: #188CE8;
-
-}
 
 /* Section-features */
 .features-list {
@@ -466,7 +483,7 @@ a {
   height: 100%;
   border-radius: 50%;
   background-color: var(--white-cl--);
-  transition: var(--animation-time--);
+  transition: background var(--animation-time--);
 }
 
 .socials-link:hover,
@@ -484,6 +501,7 @@ a {
   justify-content: center;
   align-items: center;
   fill: var(--color-icons--);
+  transition: fill var(--animation-time--);
 }
 
 /* Section-clients */
@@ -518,13 +536,13 @@ a {
   height: 92px;
   border-radius: 4px;
   border: 1px solid #AFB1B8;
-  transition: var(--animation-time--);
+  transition: border var(--animation-time--);
 
 }
 
 .cliens-icons {
   fill: var(--color-icons--);
-  transition: var(--animation-time--);
+  transition: fill var(--animation-time--);
 }
 
 .clients-link:hover,
@@ -598,7 +616,7 @@ a {
   line-height: 1.14;
   letter-spacing: 0.42px;
   text-decoration: none;
-  transition: var(--animation-time--);
+  transition: color var(--animation-time--);
 }
 
 .link-footer:hover,
@@ -640,7 +658,7 @@ a {
   height: 44px;
   border-radius: 50%;
   background-color: #FFFFFF1A;
-  transition: var(--animation-time--);
+  transition: background var(--animation-time--);
 }
 
 .footer-link-icons:hover,
@@ -695,7 +713,8 @@ a {
   letter-spacing: 0.48px;
   border: none;
   cursor: pointer;
-  transition: var(--animation-time--);
+
+  transition: color var(--animation-time--), background var(--animation-time--), box-shadow var(--animation-time--);
 }
 
 .title-btn {
@@ -718,7 +737,7 @@ a {
 
 .portfolio-link {
   display: block;
-  transition: var(--animation-time--);
+  transition: background var(--animation-time--), box-shadow var(--animation-time--);
 }
 
 .portfolio-link:hover,
