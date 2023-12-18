@@ -231,7 +231,6 @@ a {
 .btn:focus {
   color: var(--white-cl--);
   background: #188CE8;
-
 }
 
 /* Modal form */
@@ -242,19 +241,19 @@ a {
   height: 100%;
   top: 0;
   left: 0;
-  transition: opacity var(--animation-time--);
   z-index: 100;
   opacity: 1;
+  transition: opacity var(--animation-time--);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
+  transition: opacity var(--animation-time--);
 }
 
 .backdrop.is-hidden .modal-wraper {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .modal-wraper {
@@ -266,8 +265,9 @@ a {
   left: 50%;
   width: 528px;
   height: 581px;
-  transform: translate(-50%, -50%) scale(1);
-  transition: var(--animation-time--);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.0);
+  
 }
 
 
@@ -282,7 +282,7 @@ a {
   height: 30px;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.10);
-  background-color: var(--white-cl--)
+  background-color: var(--white-cl--);
 }
 
 .icons-modal {
@@ -730,12 +730,11 @@ a {
 
 .portfolio-link {
   display: block;
-  transition: background var(--animation-time--), box-shadow var(--animation-time--);
+  transition: box-shadow var(--animation-time--);
 }
 
 .portfolio-link:hover,
 .portfolio-link:focus {
-  background: #FFF;
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
