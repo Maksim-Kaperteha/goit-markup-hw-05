@@ -243,15 +243,14 @@ a {
   left: 0;
   z-index: 100;
   opacity: 1;
-  transition: opacity var(--animation-time--);
+  transition: opacity var(--animation-time--), visibility var(--animation-time--);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: inherit;
   pointer-events: none;
-  transition: opacity var(--animation-time--);
 }
-
 .backdrop.is-hidden .modal-wraper {
   transform: translate(-50%, -50%) scale(0.8);
 }
@@ -267,7 +266,8 @@ a {
   height: 581px;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1.0);
-  
+  transition: transform var(--animation-time--);
+
 }
 
 
